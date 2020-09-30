@@ -11,7 +11,7 @@ const routes = require('./routes');
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 4000
+const port = process.env.PORT || 4000
 
 // MIDDLEWARE:
 
@@ -23,7 +23,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 
 app.use(
     session({
@@ -41,10 +41,10 @@ app.use(
 app.use('api/v1/auth', routes.auth);
 app.use('api/v1/users', routes.users);
 app.use('api/v1/gardens', routes.gardens);
-app.use('api/v1/plants', routes.plants);
+// app.use('api/v1/plants', routes.plants);
 
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is listening on http://localhost:${port}`);
 });
   

@@ -1,11 +1,11 @@
 const db = require ('../models');
-
+// nothing in db until plus is pressed and a number above zero is the quantity
 const createPlant = (req, res) => {
     console.log(req.body)
-    if (!req.body.name || !req.body.size) { // change to name and quantity from frontend
+    if (!req.body.name || !req.body.quantity) { // change to name and quantity from frontend
         return res.status(400).json({
             status: 400,
-            message: 'please enter your Plant name and size' // change with if parameters
+            message: 'please enter your Plant name and quantity' // change with if parameters
         });
     }
     db.Plants.create(req.body, (error, createdPlant) => {
