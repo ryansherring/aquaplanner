@@ -1,5 +1,5 @@
 const express = require("express");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cors = require("cors");
@@ -8,6 +8,7 @@ const app = express();
 
 const db = require('./models');
 const routes = require('./routes');
+const googleAuth = require('./googleAuth')
 
 require('dotenv').config();
 
